@@ -1,16 +1,20 @@
 import React from 'react';
-import Header from './components/Header';
-import Sidebar from './components/Sidebar';
-import MainContent from './components/MainContent';
-
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import LoginPage from './Pages/Login';
+import RegisterPage from './Pages/Register';
+import Dashboard from './Pages/Dashboard';
 const App = () => {
   return (
     <>
-      <Header />
-      <div className='flex'> 
-      <Sidebar />
-      <MainContent />
-      </div>
+<Router>
+      <Routes>
+        <Route path="/" element={<LoginPage />} />
+        <Route path="/register" element={<RegisterPage />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+
+      </Routes>
+    </Router>
+   
     </>
   );
 };
